@@ -8,15 +8,15 @@ let searchSubmitKey2 = document.getElementById("search-submit-key2");
 let searchSubmitName = document.getElementById("search-submit-name");
 
 searchSubmitKey1.addEventListener("click", function () {
-    $('#loaderScreen').show();
+    // $('#loaderScreen').show();
     urlBuilder(1);
 });
 searchSubmitKey2.addEventListener("click", function () {
-    $('#loaderScreen').show();
+    // $('#loaderScreen').show();
     urlBuilder(1);
 });
 searchSubmitName.addEventListener("click", function () {
-    $('#loaderScreen').show();
+    // $('#loaderScreen').show();
     urlBuilder(2);
 });
 searchInput.addEventListener("keyup", inputLogger);
@@ -28,7 +28,7 @@ start = 0;
 // 2. URL Building
 function inputLogger(event) {
     if (event.key === "Enter") {
-        $('#loaderScreen').show();
+        // $('#loaderScreen').show();
         urlBuilder(1);
     }
 }
@@ -125,9 +125,9 @@ function designationSetup(num) {
     if (opt == 1) {
         clearContent = false;
         if (des_statesArray.length < 1) {
-            $('#park-name').load(document.URL +  '#park-name', function() {
-                $('#loaderScreen').hide();
-            });
+            // $('#park-name').load(document.URL +  '#park-name', function() {
+            //     $('#loaderScreen').hide();
+            // });
             park.innerHTML = "no parks found";
         }
         for (var y in des_statesArray) {
@@ -138,9 +138,9 @@ function designationSetup(num) {
     if (opt == 2) {
         clearContent = false;
         if (des_searchArray.length < 1) {
-            $('#park-name').load(document.URL +  '#park-name', function() {
-                $('#loaderScreen').hide();
-            });
+            // $('#park-name').load(document.URL +  '#park-name', function() {
+            //     $('#loaderScreen').hide();
+            // });
             park.innerHTML = "no parks found";
         }
         for (var y in des_searchArray) {
@@ -151,9 +151,9 @@ function designationSetup(num) {
     if (opt == 3) {
         clearContent = false;
         if (des_allArray.length < 1) {
-            $('#park-name').load(document.URL +  '#park-name', function() {
-                $('#loaderScreen').hide();
-            });
+            // $('#park-name').load(document.URL +  '#park-name', function() {
+            //     $('#loaderScreen').hide();
+            // });
             park.innerHTML = "no parks found";
         }
         for (var y in des_allArray) {
@@ -203,7 +203,7 @@ function mainFunction(response) {
             loadMore.innerHTML = "Load More";
             loadMore.className = "loadMoreButton";
             loadMore.addEventListener("click", function (e) {
-                $('#loaderScreen').show();
+                // $('#loaderScreen').show();
                 this.remove();
                 load();
             });
@@ -239,10 +239,6 @@ function mainFunction(response) {
         }
     }
 
-    $('#park-name').load(document.URL +  '#park-name', function() {
-        $('#loaderScreen').hide();
-    });
-
 }
 
 function load() {
@@ -272,6 +268,9 @@ function render(response) {
     desc.innerHTML = d.data[0].description;
     dir.innerHTML = d.data[0].directionsInfo;
     site.innerHTML = "<img src=\"svg/website.svg\">   " + '<a target="_blank" href=' + d.data[0].url + '>' + d.data[0].url + '</a>';
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+                $('#modalLoader').hide();
+    });
 }
 
 function getGeneral(name) {
@@ -394,6 +393,10 @@ function alertRender(response) {
     if (alerts.innerHTML === "") {
         alerts.innerHTML = "<br><br><br><br><img src=\"svg/safety-caution-alerts-black-30.svg\"> <br> no alerts found <br><br><br><br> ";
     }
+
+    $('.modal-content').load(document.URL + '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 function getAlerts(name) {
@@ -440,6 +443,10 @@ function articleRender(response) {
         articles.innerHTML = "<br><br><br><br><img src=\"svg/brochure-black-30.svg\"> <br> no articles found <br><br><br><br> ";
 
     }
+
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 
 }
 
@@ -563,6 +570,9 @@ function campRender(response) {
         camp.innerHTML = "<br><br><br><br><img src=\"svg/campfire-black-30.svg\"> <br> no campgrounds found <br><br><br><br> ";
     }
 
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 function getCampgrounds(name) {
@@ -636,6 +646,10 @@ function eventRender(response) {
     if (events.innerHTML === "") {
         events.innerHTML = "<br><br><br><br><img src=\"svg/calendar-events-black-30.svg\"> <br> no events found <br><br><br><br> ";
     }
+
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 function getEvents(name) {
@@ -691,6 +705,10 @@ function lessonRender(response) {
     if (lesson.innerHTML === "") {
         lesson.innerHTML = "<br><br><br><br><img src=\"svg/bookstore-black-30.svg\"> <br> no lesson plans found <br><br><br><br> ";
     }
+
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 
@@ -754,6 +772,10 @@ function newsRender(response) {
     if (news.innerHTML === "") {
         news.innerHTML = "<br><br><br><br><img src=\"svg/newspaper-black-30.svg\"> <br> no news found <br><br><br><br> ";
     }
+
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 function getNews(name) {
@@ -800,6 +822,9 @@ function peopleRender(response) {
         people.innerHTML = "<br><br><br><br><img src=\"svg/family-restroom-black-30.svg\"> <br> no people found <br><br><br><br> ";
     }
 
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 function getPeople(name) {
@@ -845,6 +870,9 @@ function placesRender(response) {
         places.innerHTML = "<br><br><br><br><img src=\"svg/cabin-black-30.svg\"> <br> no places found <br><br><br><br> ";
     }
 
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 function getPlaces(name) {
@@ -890,6 +918,10 @@ function vcRender(response) {
     if (vc.innerHTML === "") {
         vc.innerHTML = "<br><br><br><br><img src=\"svg/visitor-center-black-30.svg\"> <br> no places found <br><br><br><br> ";
     }
+
+    $('.modal-content').load(document.URL +  '.modal-content', function() {
+        $('#modalLoader').hide();
+    });
 }
 
 function getVC(name) {
