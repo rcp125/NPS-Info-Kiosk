@@ -25,6 +25,14 @@ park = document.getElementById("park-name");
 let parkdesc = document.getElementById("park-desc");
 start = 0;
 
+$.ajax({
+   async: false,
+   type: "POST",
+   url: "/Page/Method",
+   contentType: "application/json",
+   data: JSON.stringify({ ParameterName: paramValue }),
+});
+
 // 2. URL Building
 function inputLogger(event) {
     if (event.key === "Enter") {
