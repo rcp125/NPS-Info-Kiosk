@@ -1,5 +1,3 @@
-// 1. API & Search Component Initialization
-
 const appKey = "kuM6fs4DFwB9r2u3YIXynuYBqjD54WyB7zDc3Qvl";
 
 let searchInput = document.getElementById("search-input");
@@ -8,15 +6,15 @@ let searchSubmitKey2 = document.getElementById("search-submit-key2");
 let searchSubmitName = document.getElementById("search-submit-name");
 
 searchSubmitKey1.addEventListener("click", function () {
-    // $('#loaderScreen').show();
+    park.innerHTML = "<img src=\"images/lightgallery/loading.gif\">"
     urlBuilder(1);
 });
 searchSubmitKey2.addEventListener("click", function () {
-    // $('#loaderScreen').show();
+    park.innerHTML = "<img src=\"images/lightgallery/loading.gif\">"
     urlBuilder(1);
 });
 searchSubmitName.addEventListener("click", function () {
-    // $('#loaderScreen').show();
+    park.innerHTML = "<img src=\"images/lightgallery/loading.gif\">"
     urlBuilder(2);
 });
 searchInput.addEventListener("keyup", inputLogger);
@@ -28,7 +26,7 @@ start = 0;
 // 2. URL Building
 function inputLogger(event) {
     if (event.key === "Enter") {
-        // $('#loaderScreen').show();
+        park.innerHTML = "<img src=\"images/lightgallery/loading.gif\">"
         urlBuilder(1);
     }
 }
