@@ -349,7 +349,7 @@ function getHours(name) {
 
 function alertRender(response) {
     let d = JSON.parse(response);
-    var alerts = document.getElementById("alerts");
+    alerts = document.getElementById("alerts");
     alerts.innerHTML = "";
 
     for (var i = 0; i < d.data.length; i++) {
@@ -399,13 +399,14 @@ function alertRender(response) {
 
 function getAlerts(name) {
     url = "https://developer.nps.gov/api/v1/alerts?parkCode=" + name + "&api_key=" + appKey;
+    alerts.innerHTML = "<img src=\"images/lightgallery/loading.gif\">";
     xmlRequest(url, alertRender);
 }
 
 
 function articleRender(response) {
     let d = JSON.parse(response);
-    var articles = document.getElementById("articles");
+    articles = document.getElementById("articles");
     articles.innerHTML = "";
 
     for (var i = 0; i < d.data.length; i++) {
@@ -450,6 +451,7 @@ function articleRender(response) {
 
 function getArticles(name) {
     url = "https://developer.nps.gov/api/v1/articles?parkCode=" + name + "&api_key=" + appKey;
+    articles.innerHTML = "<img src=\"images/lightgallery/loading.gif\">";
     xmlRequest(url, articleRender);
 }
 
@@ -581,7 +583,7 @@ function getCampgrounds(name) {
 
 function eventRender(response) {
     let d = JSON.parse(response);
-    var events = document.getElementById("events");
+    events = document.getElementById("events");
     events.innerHTML = "";
 
     for (var i = 0; i < d.data.length; i++) {
@@ -652,6 +654,7 @@ function eventRender(response) {
 
 function getEvents(name) {
     url = "https://developer.nps.gov/api/v1/events?parkCode=" + name + "&api_key=" + appKey;
+    events.innerHTML = "<img src=\"images/lightgallery/loading.gif\">";
     xmlRequest(url, eventRender);
 }
 
@@ -718,7 +721,7 @@ function getLessons(name) {
 
 function newsRender(response) {
     let d = JSON.parse(response);
-    var news = document.getElementById("news");
+    news = document.getElementById("news");
     news.innerHTML = "";
 
     for (var i = 0; i < d.data.length; i++) {
@@ -778,13 +781,14 @@ function newsRender(response) {
 
 function getNews(name) {
     url = "https://developer.nps.gov/api/v1/newsreleases?parkCode=" + name + "&api_key=" + appKey;
+    news.innerHTML = "<img src=\"images/lightgallery/loading.gif\">";
     xmlRequest(url, newsRender);
 }
 
 
 function peopleRender(response) {
     let d = JSON.parse(response);
-    var people = document.getElementById("people");
+    people = document.getElementById("people");
     people.innerHTML = "";
 
     for (var i = 0; i < d.data.length; i++) {
@@ -827,12 +831,13 @@ function peopleRender(response) {
 
 function getPeople(name) {
     url = "https://developer.nps.gov/api/v1/people?parkCode=" + name + "&api_key=" + appKey;
+    people.innerHTML = "<img src=\"images/lightgallery/loading.gif\">";
     xmlRequest(url, peopleRender);
 }
 
 function placesRender(response) {
     let d = JSON.parse(response);
-    var places = document.getElementById("places");
+    places = document.getElementById("places");
     places.innerHTML = "";
 
     for (var i = 0; i < d.data.length; i++) {
@@ -875,6 +880,7 @@ function placesRender(response) {
 
 function getPlaces(name) {
     url = "https://developer.nps.gov/api/v1/places?parkCode=" + name + "&api_key=" + appKey;
+    places.innerHTML = "<img src=\"images/lightgallery/loading.gif\">";
     xmlRequest(url, placesRender);
 }
 
